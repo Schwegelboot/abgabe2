@@ -12,8 +12,7 @@
         
 </head>
 <body>
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/listeanzeigen.js"></script> 
+        
 
     <h1>Abgabe 2 Initialer Commit</h1>
     <button id="bt1">Was kannst du nur sein?</button>
@@ -24,21 +23,24 @@
             <h1>My First Bootstrap Page</h1>
             <p>This is some text.</p>
             <div class="row">
-                    <div class="col-4">.col-sm-4
-                        <div id="list">
-                            <label for="listenname">first list</label>
-                            <div class="dropdown">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                      
-                                    </button>
-                                    <div class="dropdown-menu">
-                                      <a class="dropdown-item" href="#">Link 1</a>
-                                      <a class="dropdown-item" href="#">Link 2</a>
-                                      <a class="dropdown-item" href="#">Link 3</a>
-                                    </div>
-                            </div>
+                    <div class="col-4">
+                      <div class="row">
+                        <a href="#" id="openlist">
+                        <div id="listen" class="col-3">
+                            
+                    </div>
+                        </a>
+                    <div class="dropdown" class="col-1">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">  
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Löschen</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                      </div>
+                    </div>
                         </div>
-                        
+                      
                     </div>
                     <div class="col-8">.col-sm-8
                         <h2 id="listname"> Beispielname</h2>
@@ -53,14 +55,16 @@
                         <br>
                         <form action="/action_page.php">
                             <div class="form-check-inline">
-                                    <label for="listenelement">beispielelement</label>
-
+                              <div id="elemente">
+                              <p class="listenelement"></p>    
                               <label class="form-check-label" for="check1">
                                 <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked>
                               </label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
                     </div>
                   </div>
 
@@ -68,7 +72,8 @@
 
 
 
-        
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/listeanzeigen.js"></script> 
 
 </body>
 </html>
