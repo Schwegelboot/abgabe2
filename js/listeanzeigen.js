@@ -20,7 +20,9 @@ $(document).ready(function () {
     $('#openlist').click(function (){
         $.get("https://shopping-lists-api.herokuapp.com/api/v1/lists/5d9a21b50f5da70017537715", function(data,status){
                 data.items.forEach(element => {
+                
                 listElement= "<p>"+element.name+"</p>";
+
                 $('#elemente').append(listElement);
             });
         })
