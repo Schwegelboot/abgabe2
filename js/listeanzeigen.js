@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('#openlist').click(function (){
-        $.get("https://shopping-lists-api.herokuapp.com/api/v1/lists/5d9a21b50f5da70017537715", function(data,status){
+        $.get("https://shopping-lists-api.herokuapp.com/api/v1/lists/5d9a21b50f5da70017537715, function(data,status){
                 data.items.forEach(element => {
                 
                 listElement= "<p>"+element.name+"</p>";
@@ -27,4 +27,30 @@ $(document).ready(function () {
             });
         })
     });
+})
+
+
+
+$(document).ready(function(){
+    $.get("https://shopping-lists-api.herokuapp.com/api/v1/lists/5d9a21b50f5da70017537715", function(data,status){
+    list.forEach(element)
+        document.getElementById().append(
+    
+    createListElementUI(daten){
+        var HtmlElement;
+        HtmlElement="<div>
+                        <p>"+daten.name+"</p>
+                        <p>"+daten.flag+"</p>
+                    </div>";
+
+
+
+    }
+        
+
+
+
+
+
+    }
 })
