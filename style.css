@@ -2,4 +2,33 @@
 
 .listenname {display: inline;}
 
+#elementList {
+    height: 30em;
+    background-color: rgb(223, 255, 255)
+}
+
+.element {
+    border-style: solid;
+    border-width: 1px; 
+    border-color: lightgray; 
+    background-color: white;
+}
+
+.formInput{
+    background-color: white
+}
+
+.formInlineBlock{
+    padding-left: 0.5em
+}
+
+.marginZero{
+    margin:0em;
+}
+
+.margin-t-b{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 #listen {display: inline;}
