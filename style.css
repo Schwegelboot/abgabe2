@@ -1,0 +1,41 @@
+body{
+    display: grid;
+    height: 100%;
+    width: 100%;
+        
+}
+
+.grid-container{
+    display: grid;
+    grid-template-rows: 20% 60% auto;
+    grid-template-columns: 20% auto;
+    grid-template-areas: 
+    'aside  header'
+    'aside  main'
+    'footer footer';
+}
+
+div .hamburger{
+    clear: both;
+    float: right;
+}
+
+td{
+    border: 1px solid black;
+}
+
+header{
+    grid-area: header;
+}
+
+main{
+    grid-area: main;
+}
+aside{
+    grid-area: aside;
+    border-right: 1px solid orangered;
+}
+
+footer{
+    grid-area: footer;
+}
