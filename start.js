@@ -5,7 +5,7 @@ function addAChild () {
     var Ausgabebereich = document.getElementById('main');
     Ausgabebereich.appendChild(myH2);
   }
-
+jguigigi
   function init () {
     var element  = document.getElementById ('one');
     element.addEventListener ('click', addAChild);
