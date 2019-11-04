@@ -3,6 +3,7 @@
         <html lang="de">
 
         <meta charset="utf-8">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -15,9 +16,9 @@
 <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
+        <div class="col">
         <section class="header1 cid-rmHLpxsvRQ" id="header01-17">
-        <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(99, 90, 81);">
+        <div class="mbr-overlay" style="opacity: 0.3;">
         </div>
     
         <div class="container">
@@ -42,51 +43,34 @@
           <aside class="col-12 col-md-2 p-0 bg-dark">
               <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
                   <div class="collapse navbar-collapse">
-                      <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
-                          <li class="nav-item">
-                              <a class="nav-link pl-0 text-nowrap" href="#"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">Brand</span></a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link pl-0" href="#"><i class="fa fa-heart-o fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link pl-0" href="#"><i class="fa fa-book fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link pl-0" href="#"><i class="fa fa-heart codeply fa-fw"></i> <span class="d-none d-md-inline">Codeply</span></a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link pl-0" href="#"><i class="fa fa-star codeply fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link pl-0" href="#"><i class="fa fa-star fa-fw"></i> <span class="d-none d-md-inline">Link</span></a>
-                          </li>
+                      <ul id="listenNav" class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                       </ul>
                   </div>
               </nav>
           </aside>
-          <main class="col bg-faded py-3">
+          <main class="col bg-faded py-3 maincontent">
               <div class="row">
-                  <div class="col-12">
+                  <div class="col">
                       <div class="container">
                           <div id="hRechts">
                               <br>
                           </div>
 
-                          <div class="container margin-t-b">
-                              <div id="elementList">
+                          <div class="container margin-t-b elementbereich">
+                              <div id="elementList" class="overflow-auto">
 
                               </div>
+                              <form>
+                                  <div class="form-group form-check-inline container-fluid bottom">
+                                      <input type="text" class="form-control" id="elementToAdd">
+                                      <button class="btn btn-primary" id="btnAddElement" style="padding-left: 1em" >Submit</button>
+                                  </div>
+                              </form>
                           </div>
 
                           <div>
                               <div>
-                                  <form>
-                                      <div class="form-group form-check-inline container-fluid">
-                                          <input type="text" class="form-control" id="elementToAdd">
-                                          <button class="btn btn-primary" id="btnAddElement" style="padding-left: 1em" >Submit</button>
-                                      </div>
-                                  </form>
+                                  
                               </div>
                               <br>
                           </div>

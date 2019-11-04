@@ -1,20 +1,26 @@
-var currentListId = "5d9a21b50f5da70017537715";
+var currentListId = null;
 const apiKey = "fe8791e84351133005762b70d1e38712";
 
 $(document).ready(function () {
-    $.get("https://shopping-lists-api.herokuapp.com/api/v1/lists/" + currentListId, function (data, status) {
-        $('#listen').append("<a id='listName'><p  class=listenname>" + data.name + "</p></a>" + "<div class='dropdown' class='col-1'>" +
-            "<button type='button' class='btn btn-primary dropdown-toggle' data-toggle='dropdown'>" +
-            "</button>" + "<div class='dropdown-menu'>" +
-            "<a class='dropdown-item' 'id=dellist' href='#'>Löschen</a>" +
-            "<a class='dropdown-item' 'id=showList' href='#'>Anzeigen</a>" +
-            "</div>" + "</div");
-    });
-});
-
-$(document).ready(function () {
-    $.get("https://shopping-lists-api.herokuapp.com/api/v1/lists/" + currentListId, function (data, status) {
-        $('#hRechts').append("<h2 id='listenUeberschrift'>" + data.name + "</h2>");
+    $.ajax({
+        type: "GET",
+        url: "https://shopping-lists-api.herokuapp.com/api/v1/lists",
+        headers: {"Authorization" : apiKey},
+        success: function (data) {
+            data.forEach(list => {
+                let listNav = list._id + "Nav";
+                let listDel = list._id + "Del";
+                let div = $("<li id='"+ list._id +"' class='nav-item mt-2'>" +
+                    "<a id='" + listNav + "' class='nav-link pl-0 text-nowrap d-inline'>"+list.name+"</a>" +
+                    "<button id='" + listDel + "' class='btn btn-danger btn-xs d-inline float-right' style='padding-left: 1em'> Löschen </button> " +
+                    "<br>" +
+                    "</li>"
+                );
+                $("#listenNav").append(div);
+                $("#" + listNav).bind('click', {}, showListClickHandler);
+                $("#" + listDel).bind('click', {}, deleteListClickHandler);
+            });
+        }
     });
 });
 
@@ -31,14 +37,6 @@ $("#btnAddElement").click(function (e) {
             let elementToCreate = data.items[latestElement];
             createElement(elementToCreate);
         }
-    });
-})
-
-$("#showList").click(function (e) {
-    $.get("https://shopping-lists-api.herokuapp.com/api/v1/lists/" + currentListId, function (data, status) {
-        data.items.forEach(element => {
-            createElement(element);
-        });
     });
 });
 
@@ -59,20 +57,58 @@ function createElement(elementToCreate) {
         "</div> " +
         "</form> " +
         "</div>");
-    $("#elementList").after(div);
+    $("#elementList").append(div);
     $("#"+btnID).bind('click', {}, deleteElementClickHandler);
     $("#"+checkID).bind('click', {}, checkElementClickHandler);
 };  
 
+function showListClickHandler(e) {
+    e.preventDefault();
+    let listID= e.target.parentNode.id;
+    $.ajax({
+        type: "GET",
+        url: "https://shopping-lists-api.herokuapp.com/api/v1/lists/"+ listID,
+        success: function (data) {
+            clearElementList();
+            currentListId = data._id;
+            $('#hRechts').append("<h2 id='listenUeberschrift'>" + data.name + "</h2>");
+            data.items.forEach(element => {
+                createElement(element);
+            });
+        }
+    });
+}
+
+function clearElementList(){
+    $('#hRechts').empty();
+    $("#elementList").empty();
+}
+
 function deleteElementClickHandler (e){
     e.preventDefault();
-    let elementToDelete = e.target.parentNode.parentNode.parentNode.id;
+    let elementToDelete= e.target.parentNode.parentNode.parentNode.id;
     $.ajax({
         type: "DELETE",
         url: "https://shopping-lists-api.herokuapp.com/api/v1/lists/" + currentListId + "/items/" + elementToDelete,
         headers: {"Authorization" : apiKey},
         success: function () {
             $("#" + elementToDelete).remove();
+        }
+    });
+};
+
+function deleteListClickHandler (e){
+    e.preventDefault();
+    let listToDelete = e.target.parentNode.id;
+    $.ajax({
+        type: "DELETE",
+        url: "https://shopping-lists-api.herokuapp.com/api/v1/lists/" + listToDelete,
+        headers: {"Authorization" : apiKey},
+        success: function () {
+            if (currentListId == listToDelete){
+                clearElementList();
+            }
+            $("#" + listToDelete).remove();
         }
     });
 };

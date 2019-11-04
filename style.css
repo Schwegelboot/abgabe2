@@ -4,8 +4,10 @@
 
 #elementList {
     height: 30em;
-    background-color: rgb(223, 255, 255)
-}
+    background-color: rgba(243, 243, 243, 0.774);
+    border-radius: 0.3em;
+    
+    }
 
 .element {
     border-style: solid;
@@ -29,8 +31,21 @@
 .margin-t-b{
     margin-top: 2em;
     margin-bottom: 2em;
+    padding: 0px;;
 }
 
 #listen {display: inline;}
 
-#header01-17 {background-image: url(headerbild.jpg);}
+#header01-17 {background-image: url(header.jpg);
+                background-size: cover;}
+
+.bottom {   padding-top: 1em;
+                padding-right: 0px;}
+
+.col {padding: 0px;}
+
+.maincontent {  padding: 0px;
+                background-image: url(back.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                }
