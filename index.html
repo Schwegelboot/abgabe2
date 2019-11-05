@@ -1,85 +1,74 @@
 <html>
+
 <head>
-        <html lang="de">
-
-        <meta charset="utf-8">
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="style.css">
+  <html lang="de">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"
+    integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-        <section class="header1 cid-rmHLpxsvRQ" id="header01-17">
-        <div class="mbr-overlay" style="opacity: 0.3;">
-        </div>
-    
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="align-center">
-                     
-                    <h2 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1">Einkaufsliste</h2>
-                    <h1 class="mbr-text pb-3 mbr-white mbr-light mbr-fonts-style display-5">
-                        Semi guter Einkaufslistenmanager</h1>
-                    
-                </div>
-            </div>
-        </div>
-      </section>
 
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <section class="header1 cid-rmHLpxsvRQ" id="header01-17">
+          <div class="mbr-overlay" style="opacity: 0.3;">
+          </div>
+
+          <div class="container">
+            <div class="row justify-content-md-center">
+              <div class="align-center">
+                <h2 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1">Einkaufsliste</h2>
+                <h1 class="mbr-text pb-3 mbr-white mbr-light mbr-fonts-style display-5">Semi guter Einkaufslistenmanager
+                </h1>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
 
   <div class="container-fluid">
-      <div class="row min-vh-100">
-          <aside class="col-12 col-md-2 p-0 bg-dark">
-              <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
-                  <div class="collapse navbar-collapse">
-                      <ul id="listenNav" class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
-                      </ul>
-                  </div>
-              </nav>
-          </aside>
-          <main class="col bg-faded py-3 maincontent">
-              <div class="row">
-                  <div class="col">
-                      <div class="container">
-                          <div id="hRechts">
-                              <br>
-                          </div>
+    <div class="row">
+      <aside class="col-12 col-md-2 p-0 bg-dark">
+        <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+          <div class="collapse navbar-collapse">
+            <ul id="listenNav" class="flex-md-column flex-row navbar-nav w-100 justify-content-between"></ul>
+          </div>
+        </nav>
+      </aside>
+      <main class="col bg-faded py-3 maincontent">
+        <div class="container">
+          <div id="hRechts">
+            <br>
+          </div>
+          <div class="container margin-t-b elementbereich">
+            <div id="elementList" class="overflow-auto">
 
-                          <div class="container margin-t-b elementbereich">
-                              <div id="elementList" class="overflow-auto">
-
-                              </div>
-                              <form>
-                                  <div class="form-group form-check-inline container-fluid bottom">
-                                      <input type="text" class="form-control" id="elementToAdd">
-                                      <button class="btn btn-primary" id="btnAddElement" style="padding-left: 1em" >Submit</button>
-                                  </div>
-                              </form>
-                          </div>
-
-                          <div>
-                              <div>
-                                  
-                              </div>
-                              <br>
-                          </div>
-                      </div>
-                  </div>
+            </div>
+            <form>
+              <div class="form-group form-check-inline container-fluid bottom">
+                <input type="text" class="form-control" id="elementToAdd">
+                <button class="btn btn-primary" id="btnAddElement" style="padding-left: 1em">Submit</button>
               </div>
-          </main>
-      </div>
+            </form>
+          </div>
+          <br>
+        </div>
+      </main>
+    </div>
   </div>
-<script src="js/listeanzeigen.js"></script> 
+  <script src="js/listeanzeigen.js"></script>
 </body>
+
 </html>

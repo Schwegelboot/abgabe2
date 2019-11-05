@@ -12,7 +12,10 @@ $(document).ready(function () {
                 let listDel = list._id + "Del";
                 let div = $("<li id='"+ list._id +"' class='nav-item mt-2'>" +
                     "<a id='" + listNav + "' class='nav-link pl-0 text-nowrap d-inline'>"+list.name+"</a>" +
-                    "<button id='" + listDel + "' class='btn btn-danger btn-xs d-inline float-right' style='padding-left: 1em'> Löschen </button> " +
+
+                   /*  "<button id='" + listDel + "' class='btn btn-danger btn-xs d-inline float-right' style='padding-left: 1em'> Löschen </button> "+  <span class='oi oi-trash'></span>*/
+                    "<button id='" + listDel + "' class='btn btn-info btn-lg oi oi-trash' style='padding-left: 1em'></button>"
+                    +
                     "<br>" +
                     "</li>"
                 );
