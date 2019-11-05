@@ -5,20 +5,16 @@ $(document).ready(function () {
     $.ajax({
         type: "GET",
         url: "https://shopping-lists-api.herokuapp.com/api/v1/lists",
-        headers: {"Authorization" : apiKey},
+        headers: { "Authorization": apiKey },
         success: function (data) {
             data.forEach(list => {
                 let listNav = list._id + "Nav";
                 let listDel = list._id + "Del";
-                let div = $("<li id='"+ list._id +"' class='nav-item mt-2'>" +
-                    "<a id='" + listNav + "' class='nav-link pl-0 text-nowrap d-inline'>"+list.name+"</a>" +
-
-                   /*  "<button id='" + listDel + "' class='btn btn-danger btn-xs d-inline float-right' style='padding-left: 1em'> Löschen </button> "+  <span class='oi oi-trash'></span>*/
-                    "<button id='" + listDel + "' class='btn btn-info btn-lg oi oi-trash' style='padding-left: 1em'></button>"
-                    +
+                let div = $("<li id='" + list._id + "' class='nav-item mt-2'>" +
+                    "<a id='" + listNav + "' class='nav-link pl-0 text-nowrap d-inline'>" + list.name + "</a>" +
+                    "<button id='" + listDel + "' class='btn btn-info btn-lg oi oi-trash float-right' style='padding-left: 1em'></button>" +
                     "<br>" +
-                    "</li>"
-                );
+                    "</li>");
                 $("#listenNav").append(div);
                 $("#" + listNav).bind('click', {}, showListClickHandler);
                 $("#" + listDel).bind('click', {}, deleteListClickHandler);
@@ -36,7 +32,7 @@ $("#btnAddElement").click(function (e) {
         data: { name: elementToAdd },
         success: function (data) {
             let elementList = data.items;
-            let latestElement = elementList.length -1;
+            let latestElement = elementList.length - 1;
             let elementToCreate = data.items[latestElement];
             createElement(elementToCreate);
         }
@@ -61,16 +57,16 @@ function createElement(elementToCreate) {
         "</form> " +
         "</div>");
     $("#elementList").append(div);
-    $("#"+btnID).bind('click', {}, deleteElementClickHandler);
-    $("#"+checkID).bind('click', {}, checkElementClickHandler);
-};  
+    $("#" + btnID).bind('click', {}, deleteElementClickHandler);
+    $("#" + checkID).bind('click', {}, checkElementClickHandler);
+};
 
 function showListClickHandler(e) {
     e.preventDefault();
-    let listID= e.target.parentNode.id;
+    let listID = e.target.parentNode.id;
     $.ajax({
         type: "GET",
-        url: "https://shopping-lists-api.herokuapp.com/api/v1/lists/"+ listID,
+        url: "https://shopping-lists-api.herokuapp.com/api/v1/lists/" + listID,
         success: function (data) {
             clearElementList();
             currentListId = data._id;
@@ -82,33 +78,33 @@ function showListClickHandler(e) {
     });
 }
 
-function clearElementList(){
+function clearElementList() {
     $('#hRechts').empty();
     $("#elementList").empty();
 }
 
-function deleteElementClickHandler (e){
+function deleteElementClickHandler(e) {
     e.preventDefault();
-    let elementToDelete= e.target.parentNode.parentNode.parentNode.id;
+    let elementToDelete = e.target.parentNode.parentNode.parentNode.id;
     $.ajax({
         type: "DELETE",
         url: "https://shopping-lists-api.herokuapp.com/api/v1/lists/" + currentListId + "/items/" + elementToDelete,
-        headers: {"Authorization" : apiKey},
+        headers: { "Authorization": apiKey },
         success: function () {
             $("#" + elementToDelete).remove();
         }
     });
 };
 
-function deleteListClickHandler (e){
+function deleteListClickHandler(e) {
     e.preventDefault();
     let listToDelete = e.target.parentNode.id;
     $.ajax({
         type: "DELETE",
         url: "https://shopping-lists-api.herokuapp.com/api/v1/lists/" + listToDelete,
-        headers: {"Authorization" : apiKey},
+        headers: { "Authorization": apiKey },
         success: function () {
-            if (currentListId == listToDelete){
+            if (currentListId == listToDelete) {
                 clearElementList();
             }
             $("#" + listToDelete).remove();
@@ -116,7 +112,7 @@ function deleteListClickHandler (e){
     });
 };
 
-function checkElementClickHandler (e){
+function checkElementClickHandler(e) {
     e.preventDefault();
     let elementToCheck = e.target.parentNode.parentNode.parentNode.parentNode.id;
     let elementCheckBox = e.target.id;
@@ -124,7 +120,7 @@ function checkElementClickHandler (e){
     $.ajax({
         type: "PUT",
         url: "https://shopping-lists-api.herokuapp.com/api/v1/lists/" + currentListId + "/items/" + elementToCheck,
-        data: {bought: checked },
+        data: { bought: checked },
         success: function () {
             $("#" + elementCheckBox).prop('checked', checked);
         }

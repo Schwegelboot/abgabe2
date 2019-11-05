@@ -6,8 +6,7 @@
     height: 30em;
     background-color: rgba(243, 243, 243, 0.774);
     border-radius: 0.3em;
-    
-    }
+}
 
 .element {
     border-style: solid;
@@ -34,25 +33,33 @@
     padding: 0px;;
 }
 
-#listen {display: inline;}
+#listen {
+    display: inline;
+}
 
-#header01-17 {background-image: url(header.jpg);
-                background-size: cover;}
+#header01-17 {
+    background-image: url(header.jpg);
+    background-size: cover;
+}
 
-.bottom {   padding-top: 1em;
-                padding-right: 0px;}
+.bottom {   
+    padding-top: 1em;
+    padding-right: 0px;
+}
 
-.col {padding: 0px;}
+.col {
+    padding: 0px;}
 
-.maincontent {  padding: 0px;
-                background-image: url(back.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                }
+.maincontent {  
+    padding: 0px;
+    background-image: url(back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-                body {
-                    height: 100%;
-                  }
+body {
+    height: 100%;
+}
 @font-face {
 font-family: 'Glyphicons Halflings';
 src: url('../fonts/glyphicons-halflings-regular.eot');
